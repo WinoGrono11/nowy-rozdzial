@@ -1,35 +1,92 @@
 body {
-  font-family: sans-serif;
-  background-color: #f0f0f0;
-  color: #222;
-  padding: 2rem;
+  background-color: #0e0e0e;
+  color: #e0e0e0;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 0;
-}
-
-.container {
-  max-width: 600px;
-  margin: auto;
-  background: white;
   padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 
-input, button {
-  display: block;
+h1 {
+  font-size: 2em;
+  margin-bottom: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  margin: 1rem 0;
-  padding: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  max-width: 500px;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+input, textarea {
+  background: transparent;
+  border: 1px solid #555;
+  color: #fff;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #888;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 button {
-  background-color: black;
-  color: white;
+  background: #ffffff10;
+  border: 1px solid #888;
+  padding: 0.7rem;
+  border-radius: 6px;
+  color: #fff;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 
 button:hover {
-  background-color: #444;
+  background: #ffffff30;
+}
+
+.hidden-section {
+  display: none;
+  margin-top: 1rem;
+  font-size: 0.95em;
+  color: #aaa;
+}
+
+.footer {
+  text-align: center;
+  font-size: 0.9em;
+  margin-top: 3rem;
+  color: #888;
+}
+
+.links {
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.links button {
+  font-size: 0.9em;
+  padding: 0.4rem 0.8rem;
+}
+
+.donate-box {
+  font-size: 0.85em;
+  margin-top: 1rem;
+  background: #1a1a1a;
+  padding: 0.5rem;
+  border: 1px solid #444;
+  border-radius: 6px;
 }

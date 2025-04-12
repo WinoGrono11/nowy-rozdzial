@@ -4,69 +4,49 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Feniks — Kontakt</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      background: #f4f4f4;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 3rem;
-    }
-    textarea {
-      width: 100%;
-      max-width: 600px;
-      height: 200px;
-      margin-bottom: 1rem;
-      padding: 1rem;
-      font-size: 1rem;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      resize: vertical;
-    }
-    button {
-      background-color: #222;
-      color: #fff;
-      border: none;
-      padding: 0.8rem 1.5rem;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #444;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>🕊️ Kontakt — Feniks</h1>
-  <p>Podziel się myślą lub zostaw ślad — odpowiemy jeśli chcesz</p>
+  <h1>Feniks — Kontakt</h1>
 
-  <form id="contact-form">
-    <textarea name="message" placeholder="Twoja wiadomość..." required></textarea>
-    <br />
-    <button type="submit">Wyślij</button>
+  <div class="links">
+    <button onclick="toggleSection('dlaczego')">DLACZEGO</button>
+    <button onclick="toggleSection('donate')">DONATE</button>
+    <button onclick="toggleSection('prawne')">KWESTIE PRAWNE</button>
+    <button onclick="toggleSection('manifest')">MANIFEST</button>
+  </div>
+
+  <div id="dlaczego" class="hidden-section">
+    <p>To miejsce istnieje po to, by łączyć. Jeśli czujesz, że chcesz coś przekazać — zrób to. Odpowiem tylko, jeśli dasz znak, że tego oczekujesz. Tu nie ma przymusu. Jesteś wolny_a.</p>
+  </div>
+
+  <div id="donate" class="hidden-section">
+    <p>Chcesz pomóc mi zbudować coś dobrego?</p>
+    <div class="donate-box">
+      <p><strong>BTC:</strong> bc1q3zmv3s64x5dud7p6cfmljq5fsevy4xd3x9kavt</p>
+    </div>
+  </div>
+
+  <div id="prawne" class="hidden-section">
+    <p>Wiadomości trafiają anonimowo. IP nie jest zbierane. Email opcjonalny. Wszystko dobrowolne. Jesteś tu z własnej woli i to wystarczy.</p>
+  </div>
+
+  <div id="manifest" class="hidden-section">
+    <p>Feniks to więcej niż projekt. To znak, że można zacząć od nowa. Czysto. Głęboko. Prawdziwie. Jeśli tu jesteś, być może wiesz, o co chodzi. Jeśli nie — być może właśnie zaczynasz.</p>
+  </div>
+
+  <form id="kontaktForm">
+    <input type="text" name="kontakt" placeholder="Twój kontakt (lub zostaw puste)" />
+    <textarea name="tresc" rows="6" placeholder="Napisz, co czujesz..."></textarea>
+    <label><input type="checkbox" name="flaga" value="TAK" /> Odpowiedzieć?</label>
+    <button type="submit">✈️ Wyślij</button>
   </form>
 
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script>
-    (function() {
-      emailjs.init("wCFHI6wYiQQY9IQVM"); // Twój Public Key
-    })();
+  <div class="footer">
+    <p>© Feniks 2025 | Stworzone z intencją, nie przymusem.</p>
+  </div>
 
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      emailjs.send("service_izikrkg", "template_9spsxvi", {
-        message: this.message.value
-      }).then(() => {
-        alert("Wiadomość wysłana. Dziękujemy!");
-        this.reset();
-      }, (err) => {
-        console.error('Błąd:', err);
-        alert("Wystąpił błąd. Spróbuj ponownie.");
-      });
-    });
-  </script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
-Hello, nowy rozdział!
