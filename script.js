@@ -1,6 +1,6 @@
-const SERVICE_ID = "service_7i7a57a";
+const SERVICE_ID = "service_izikrkg";
 const TEMPLATE_ID = "template_9spsxvi";
-const PUBLIC_KEY = "kW81JbNmkszcc6Rj1";
+const PUBLIC_KEY = "wCFHI6wYiQQY9IQVM";
 
 function toggleSection(id) {
   const el = document.getElementById(id);
